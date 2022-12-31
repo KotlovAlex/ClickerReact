@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(206, 240, 246);
+    border-bottom: 1px solid black;
+}
+
+.logo {
+    padding: 2px;
+}

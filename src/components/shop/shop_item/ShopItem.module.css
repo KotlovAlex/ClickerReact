@@ -1,0 +1,14 @@
+.shop_item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.shop_item span {
+    padding: 5px;
+}
+
+.shop_item button {
+    font-size: 20px;
+    margin: 5px;
+}
