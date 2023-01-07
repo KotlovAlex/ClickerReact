@@ -18,4 +18,6 @@ Refactoring of common-js version.
 ____________________________
 Game Experience:
 
-![alt text](public/clicker3.png)
+<p align='center'>
+    <img src='public/clicker3.png'>
+</p>
