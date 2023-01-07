@@ -17,4 +17,5 @@ ____________________________
 Refactoring of common-js version.
 ____________________________
 Game Experience:
+
 ![alt text](public/clicker3.png)
