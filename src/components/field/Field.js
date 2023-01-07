@@ -40,7 +40,7 @@ const Field = ({field, setField}) => {
                 return <CellComponent
                     change={() => changeCells(field, i, j)}
                     readble={() => el.readble()}
-                    color={el.color}
+                    color={active ? ((i === active[0] && j === active[1]) ? 'active' : el.color) : el.color}
                     key={i*4 + j}
                 />}
             ))}
