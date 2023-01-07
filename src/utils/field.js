@@ -1,12 +1,17 @@
-import { createField, createTestField, sumOfField } from "./helper"
+import Cell from "./cell"
+import { createField, createTestField, sumOfField, findEmpty} from "./helper"
 
 class CField {
     constructor(field) {
-        this.field = field || createTestField()
+        this.field = field || createField()
     }
 
-    spawn() {
-        
+    spawn(value) {
+        const [empty, r, c] = findEmpty(this.field)
+        if (empty) {
+            this.field[r][c] = new Cell(null, value)
+            this.field[r][c].setColor()
+        }
     }
 
     draw() {

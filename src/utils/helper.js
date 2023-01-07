@@ -1,3 +1,4 @@
+import Field from "../components/field/Field"
 import Cell from "./cell"
 import CField from "./field"
 
@@ -28,26 +29,29 @@ export function createField() {
     return res
 }
 
+export function findEmpty (field) {
+    for (let i = 0; i<field.length; i++) {
+        for (let j = 0; j<field[0].length; j++) {
+            if (field[i][j].value === null) {
+                return [true, i, j]
+            }
+        }
+    }
+    return [false, null, null]
+}
+
 export function createTestField() {
     let res = []
+    let value = 1
     for (let i = 0; i<6; i++) {
         res[i] = []
         for (let j = 0; j<4; j++) {
             res[i][j] = new Cell()
+            res[i][j].value = value
+            res[i][j].setColor()
+            value *= 2
         }
     }
-    res[0][0].value = 1048576
-    res[0][0].setColor()
-    res[0][1].value = 512
-    res[0][1].setColor()
-    res[0][2].value = 256
-    res[0][2].setColor()
-    res[0][3].value = 128
-    res[0][3].setColor()
-    res[1][0].value = 64
-    res[1][0].setColor()
-    res[1][1].value = 64
-    res[1][1].setColor()
     return res
 }
 
@@ -98,3 +102,34 @@ export function readbleValue (value) {
     }
     return `${temp.toFixed(0)}${postfixes[index]}`
 }
+
+export const fromFieldToSave = (field) => {
+    let temp = [...field]
+    let res = []
+    for (let i = 0; i < temp.length; i++) {
+        res[i] = []
+        for (let j = 0; j < temp[0].length; j++) {
+            if (temp[i][j].value) res[i][j] = temp[i][j].value
+            else res[i][j] = 0
+        }
+    }
+    return res
+}
+
+export const fromSaveToField = (str) => {
+    let res = new CField().field
+    let arr = str.split(',')
+    for (let i = 0; i < res.length; i++) {
+        for (let j = 0; j < res[0].length; j++) {
+            if (+arr[i*4+j] === 0) {
+                res[i][j].value = null
+                continue
+            }
+            else {
+                res[i][j].value = +arr[i*4+j]
+                res[i][j].setColor()
+            }
+        }
+    }
+    return res
+} 

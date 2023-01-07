@@ -1,21 +1,15 @@
 import { valueToColor, readbleValue } from "./helper";
 
 class Cell {
-    constructor() {
-        this.color = null
-        this.value = null
+    constructor(color, value) {
+        this.color = color || null
+        this.value = value || null
     }
 
     
     changeValue() {
-        if (this.value === null) {
-            this.value = 1
-            this.setColor()
-        }
-        else {
-            this.value *= 2
-            this.setColor()
-        }   
+        this.value *= 2
+        this.setColor()
     }
 
     reset() {
