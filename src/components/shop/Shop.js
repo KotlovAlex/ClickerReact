@@ -4,15 +4,15 @@ import cls from './Shop.module.css'
 
 import {intervalToSec} from '../../utils/helper'
 
-const Shop = ({time}) => {
+const Shop = ({time, speed_cost, value_cost}) => {
     const items = [{
         name: 'speed',
         value: `${intervalToSec(time)}s`,
-        cost: +localStorage.getItem('speed_cost') || 4500
+        cost: speed_cost // +localStorage.getItem('speed_cost') || 4500
     }, {
         name: 'value',
         value: `0`,
-        cost: +localStorage.getItem('value_cost') || 4500
+        cost: value_cost // +localStorage.getItem('value_cost') || 4500
     }]
     return (
         <div className={cls.shop}>

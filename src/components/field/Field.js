@@ -3,25 +3,44 @@ import CellComponent from '../cellComponent/CellComponent'
 import cls from './Field.module.css'
 import CField from '../../utils/field'
 
-const Field = () => {
-    const field = new CField()
-    const [cells, setCells] = useState(field.field)
+const Field = ({field, setField}) => {
+    const [active, setActive] = useState(null)
 
     const changeCells = (field, i, j) => {
-        console.log(field);
         let res = [...field]
-        res[i][j].changeValue()
-        setCells(res)
+        // res[i][j].changeValue()
+        if (!active) {
+            setActive([i,j])
+            setField(res)
+            return
+        } else {
+            if (i === active[0] && j === active[1]) {
+                console.log('gi');
+                setActive(null)
+                return
+            }
+            if (res[active[0]][active[1]].value === res[i][j].value) {
+                res[i][j].changeValue()
+                res[active[0]][active[1]].reset()
+                setActive(null)
+                return
+            }
+            let temp = res[active[0]][active[1]]
+            res[active[0]][active[1]] = res[i][j]
+            res[i][j] = temp
+            setActive(null)
+        }
+        setField(res)
     }
     // Взаимодействие с ячейками
-    // cells[0][0].value = 8
-    // cells[0][0].setColor()
+    // field[0][0].value = 8
+    // field[0][0].setColor()
     // console.log(cells);
     return (
         <div className={cls.field}>
-            {cells.map((row, i) => row.map((el, j) => {
+            {field.map((row, i) => row.map((el, j) => {
                 return <CellComponent
-                    change={() => changeCells(cells, i, j)}
+                    change={() => changeCells(field, i, j)}
                     readble={() => el.readble()}
                     color={el.color}
                     key={i*4 + j}

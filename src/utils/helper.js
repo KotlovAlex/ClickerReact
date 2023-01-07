@@ -1,4 +1,5 @@
 import Cell from "./cell"
+import CField from "./field"
 
 export function valueToColor(value) {
     let res = 0
@@ -45,6 +46,8 @@ export function createTestField() {
     res[0][3].setColor()
     res[1][0].value = 64
     res[1][0].setColor()
+    res[1][1].value = 64
+    res[1][1].setColor()
     return res
 }
 

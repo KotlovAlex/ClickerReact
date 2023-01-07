@@ -15,8 +15,12 @@ class Cell {
         else {
             this.value *= 2
             this.setColor()
-        }
-        
+        }   
+    }
+
+    reset() {
+        this.color = null
+        this.value = null
     }
     
     setColor() {

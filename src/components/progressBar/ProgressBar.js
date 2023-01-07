@@ -2,9 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Button from '../UI/button/Button';
 import cls from './ProgressBar.module.css'
 
-const ProgressBar = ({time}) => {
-
-    const [progress, setProgress] = useState(0)
+const ProgressBar = ({time, progress,setProgress}) => {
 
     const clickHandler = () => {
         if (progress<= 95)
