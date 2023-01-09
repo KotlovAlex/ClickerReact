@@ -7,7 +7,6 @@ const CellComponent = ({setActive, value, row, col, change, readble, color}) => 
 
     const onDragStartHandler = (e) => {
         if (value) {
-            console.log([value]);
             setActive([row, col])
         }
     }
