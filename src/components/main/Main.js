@@ -7,11 +7,10 @@ import cls from './Main.module.css'
 import CField from '../../utils/field'
 
 import { fromFieldToSave, fromSaveToField, valueToRead } from '../../utils/helper'
-import Cell from '../../utils/cell'
 
 const cfield = localStorage.getItem('field') ? new CField(fromSaveToField(localStorage.getItem('field'))) : new CField()
 
-const Main = ({}) => {
+const Main = () => {
     const [field, setField] = useState(cfield.field)
     const [score, setScore] = useState(+localStorage.getItem('score') || 0)
     const [sum, setSum] = useState(+localStorage.getItem('sum') || 0)
@@ -61,7 +60,6 @@ const Main = ({}) => {
         <div className={cls.main}>
             <ProgressBar 
                 spawn={() => cfield.spawn(current_value, current_value)} 
-                value={current_value} 
                 progress={progress} 
                 setProgress={setProgress} 
                 time={time}

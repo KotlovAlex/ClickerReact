@@ -1,4 +1,3 @@
-import Field from "../components/field/Field"
 import Cell from "./cell"
 import CField from "./field"
 
@@ -38,21 +37,6 @@ export function findEmpty (field) {
         }
     }
     return [false, null, null]
-}
-
-export function createTestField() {
-    let res = []
-    let value = 1
-    for (let i = 0; i<6; i++) {
-        res[i] = []
-        for (let j = 0; j<4; j++) {
-            res[i][j] = new Cell()
-            res[i][j].value = value
-            res[i][j].setColor()
-            value *= 2
-        }
-    }
-    return res
 }
 
 export function sumOfField(field) {

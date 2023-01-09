@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className={cls.llc}>
             <span>© 2021 Alexkot LLC</span>
         </div>
-        <img class={cls.logo} src={logo} alt='logo'/>
+        <img className={cls.logo} src={logo} alt='logo'/>
     </div>
   )
 }

@@ -8,13 +8,13 @@ const Shop = ({score, setScore, value, setValue, time, setTime, speed_cost, valu
     const items = [{
         name: 'speed',
         value: `${intervalToSec(time)}s`,
-        cost: speed_cost, // +localStorage.getItem('speed_cost') || 4500
+        cost: speed_cost,
         setCost: setSpeed_cost,
         setValue: setTime
     }, {
         name: 'value',
         value: `${value}`,
-        cost: value_cost, // +localStorage.getItem('value_cost') || 4500
+        cost: value_cost,
         setCost: setValue_cost,
         setValue: setValue
     }]

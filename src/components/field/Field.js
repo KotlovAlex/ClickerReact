@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import CellComponent from '../cellComponent/CellComponent'
 import cls from './Field.module.css'
 
@@ -30,10 +30,6 @@ const Field = ({field, setField}) => {
             setActive(null)
         }
     }
-    // Взаимодействие с ячейками
-    // field[0][0].value = 8
-    // field[0][0].setColor()
-    // console.log(cells);
     return (
         <div className={cls.field}>
             {field.map((row, i) => row.map((el, j) => {

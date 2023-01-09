@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import { valueToRead } from '../../utils/helper';
+import React, {useEffect} from 'react'
 import Button from '../UI/button/Button';
 import cls from './ProgressBar.module.css'
 
-const ProgressBar = ({sum, setScore, spawn, value, time, progress,setProgress}) => {
+const ProgressBar = ({sum, setScore, spawn, time, progress,setProgress}) => {
 
     const clickHandler = () => {
         if (progress<= 95)

@@ -1,5 +1,5 @@
 import Cell from "./cell"
-import { createField, createTestField, sumOfField, findEmpty} from "./helper"
+import { createField, sumOfField, findEmpty} from "./helper"
 
 class CField {
     constructor(field) {
@@ -12,10 +12,6 @@ class CField {
             this.field[r][c] = new Cell(null, value)
             this.field[r][c].setColor()
         }
-    }
-
-    draw() {
-
     }
 
     sum() {
