@@ -8,9 +8,3 @@
 .logo {
     padding: 2px;
 }
-
-@media (max-width: 420px) {
-    .logo {
-        padding: 0;
-    }
-}

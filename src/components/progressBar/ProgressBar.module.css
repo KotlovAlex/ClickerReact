@@ -29,6 +29,7 @@
 @media (max-width: 520px) {
     .container {
         margin-top: 30px;
+        min-width: 240px;
     }
 
     .progressBar {
