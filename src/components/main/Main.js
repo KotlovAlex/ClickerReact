@@ -9,7 +9,7 @@ import CField from '../../utils/field'
 import { fromFieldToSave, fromSaveToField, valueToRead } from '../../utils/helper'
 import Cell from '../../utils/cell'
 
-const cfield = new CField(fromSaveToField(localStorage.getItem('field'))) || new CField()
+const cfield = localStorage.getItem('field') ? new CField(fromSaveToField(localStorage.getItem('field'))) : new CField()
 
 const Main = ({}) => {
     const [field, setField] = useState(cfield.field)
