@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cls from './CellComponent.module.css'
 import './colors.css'
 
-const CellComponent = ({setActive, row, col, change, readble, color}) => {
+const CellComponent = ({setActive, value, row, col, change, readble, color}) => {
     let classes = color === 'active' ? `${cls.cell} active` : `${cls.cell} color${color}`
 
     const onDragStartHandler = (e) => {
-        setActive([row, col])
+        if (value) {
+            console.log([value]);
+            setActive([row, col])
+        }
     }
     
     const onDragLeaveHandler = (e) => {
