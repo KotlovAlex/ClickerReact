@@ -8,6 +8,6 @@
 
 @media (max-width: 420px) {
     .container {
-        min-width: 420px;
+        max-width: 420px;
     }
 }

@@ -16,3 +16,9 @@
     bottom: 0;
     padding: 2px;
 }
+
+@media (max-width: 520px) {
+    .logo {
+        visibility: hidden;
+    }
+}

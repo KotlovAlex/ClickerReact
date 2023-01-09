@@ -25,3 +25,13 @@
     left: 0;
     transition: cubic-bezier(.0,.0,.0,.0) 0.1s;
 }
+
+@media (max-width: 520px) {
+    .container {
+        margin-top: 30px;
+    }
+
+    .progressBar {
+        width: 70vw;
+    }
+}

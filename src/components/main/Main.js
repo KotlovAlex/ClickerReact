@@ -41,8 +41,6 @@ const Main = () => {
 
     useEffect(() => {
         setField(updateField(field))
-        // console.log(fromSaveToField(localStorage.getItem('field')));
-        // console.log(field);
     }, [current_value])
 
     useEffect(() => {

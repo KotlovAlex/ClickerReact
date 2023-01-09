@@ -7,3 +7,9 @@
 .container {
     display: flex;
 }
+
+@media (max-width: 520px) {
+    .container {
+        flex-direction: column;
+    }
+}
