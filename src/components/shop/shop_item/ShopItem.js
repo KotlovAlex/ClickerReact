@@ -3,7 +3,7 @@ import { valueToRead } from '../../../utils/helper'
 import Button from '../../UI/button/Button'
 import cls from './ShopItem.module.css'
 
-const ShopItem = ({name, value, setValue, cost, score, setScore, setCost}) => {
+const ShopItem = ({name, value, setValue, cost, setScore, score, setCost}) => {
     const clickHandler = () => {
         let score_value = +(score.toString().replaceAll(',',''))
         if (score_value > cost) {

@@ -25,12 +25,12 @@ const Shop = ({score, setScore, value, setValue, time, setTime, speed_cost, valu
             <ShopItem 
                 name={name} 
                 value={value} 
+                setValue={setValue}
                 cost={cost} 
                 setCost={setCost} 
-                key={name} 
                 score={score} 
                 setScore={setScore}
-                setValue={setValue}
+                key={name} 
             />)}
         </div>
     )
