@@ -34,10 +34,15 @@ const Field = ({field, setField}) => {
         <div className={cls.field}>
             {field.map((row, i) => row.map((el, j) => {
                 return <CellComponent
+                    cell={el}
                     change={() => changeCells(field, i, j)}
                     readble={() => el.readble()}
                     color={active ? ((i === active[0] && j === active[1]) ? 'active' : el.color) : el.color}
                     key={i*4 + j}
+                    active={active}
+                    setActive={setActive}
+                    row={i}
+                    col={j}
                 />}
             ))}
         </div>
