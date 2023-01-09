@@ -28,6 +28,7 @@ const CellComponent = ({setActive, value, row, col, change, readble, color}) => 
 
     const onDropHandler = (e) => {
         e.preventDefault()
+        e.target.classList.remove(cls.over)
         change()
     }
 
