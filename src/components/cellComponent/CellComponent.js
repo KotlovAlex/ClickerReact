@@ -4,6 +4,7 @@ import './colors.css'
 
 const CellComponent = ({setActive, value, row, col, change, readble, color}) => {
     let classes = color === 'active' ? `${cls.cell} active` : `${cls.cell} color${color}`
+    classes = value  ? `${classes} ${cls.grabble}` : classes
 
     const onDragStartHandler = (e) => {
         if (value) {
@@ -34,7 +35,7 @@ const CellComponent = ({setActive, value, row, col, change, readble, color}) => 
 
     return (
         <div 
-            draggable={true}
+            draggable={value ? true : false}
             onDragStart={(e) => onDragStartHandler(e)}
             onDragLeave={(e) => onDragLeaveHandler(e)}
             onDragEnd={(e) => onDragEndHandler(e)}
